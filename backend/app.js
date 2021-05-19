@@ -9,6 +9,7 @@ const cors = require("cors");
 
 const app = express();
 
+const booksRouter = require("./routes/books");
 
 const mongoose = require("mongoose");
 
@@ -33,6 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use('/api', indexRouter);
+app.use("/books", booksRouter);
+
 
 
 module.exports = app;
