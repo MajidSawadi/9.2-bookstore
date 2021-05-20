@@ -8,8 +8,11 @@ require("dotenv").config();
 const cors = require("cors");
 
 const app = express();
+const authRouter = require("./routes/auth.api");
 
-const booksRouter = require("./routes/books");
+const booksRouter = require("./api/books.api");
+const usersRouter = require("./api/users.api");
+
 
 const mongoose = require("mongoose");
 
@@ -35,6 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use('/api', indexRouter);
 app.use("/books", booksRouter);
+app.use("/users", usersRouter);
+app.use("/auth", authRouter);
 
 
 
