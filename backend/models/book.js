@@ -24,6 +24,13 @@ const bookSchema = new mongoose.Schema({
 
     required: true,
   },
+  genres: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+  
+      ref: "Genre"
+    }
+  ]
 });
 
 const Book = mongoose.model("Book", bookSchema);

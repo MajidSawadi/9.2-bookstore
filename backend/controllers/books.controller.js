@@ -4,7 +4,7 @@ const createBook = async (req, res) => {
   try {
     const { title, description, author } = req.body;
 
-    const book = new Book({ title, description, author });
+    const book = new Book({ title, description, author,  });
 
     await book.save();
 
